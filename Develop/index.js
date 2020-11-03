@@ -3,6 +3,8 @@ const inquirer = require('inquirer');
 var fs = require("fs");
 const { rejects } = require('assert');
 
+
+//using inquirer
 inquirer
     .prompt([
 
@@ -73,50 +75,54 @@ inquirer
         let readme = `
 # ${answers.project}
 
-## Description and why it was build:
+## DESCRIPTION
+  What it is and why it was built:
 ${answers.description}
 ${answers.purpose}
-
-## How to use the repo:
-${answers.using}
-
-## Technologies used on this product:
+ Technologies used on this product:
 ${answers.technologies}
 
+## USAGE
+How to use the repo:
+${answers.using}
 
-## Command(s) to run to install dependencies:
+
+
+## INSTALLATION
+Command(s) to run to install dependencies:
 ${answers.dependencies}
 
-## License:
-${answers.license}
-
-## Command(s) to run to test:
+## TESTS
+Command(s) to run to test:
 ${answers.tests}
 
 
-## Who contributed to this project:
+## LICENSE:
+${answers.license}
+
+
+## CONTRIBUTING
+Who contributed to this project:
 ${answers.workers}
-
-
-## Others may contribute by?:
+ Others may contribute by:
 ${answers.contributing}
 
-## GitHub Username:
+## QUESTIONS
+GitHub Username:
 ${answers.username}
 
-## Email Contact:
+Email Contact:
 ${answers.email}
 
 `
 
 // function to write README file
-fs.writeFile('README.md', readme, err => {
-    if  (writeFileError) {
+fs.writeFile('README.md', readme, error => {
+    if  (error) {
 
-        rejects(writeFileError);
+        rejects(error);
         return;
     }
 
-   resolve('README.md');
   })
  })
