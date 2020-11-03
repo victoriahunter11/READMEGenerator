@@ -75,6 +75,17 @@ inquirer
         let readme = `
 # ${answers.project}
 
+# TABLE OF CONTENTS
+
+* [Description](#DESCRIPTION)
+* [Usage](#USAGE)
+* [Installation](#INSTALLATION)
+* [Tests](#TESTS)
+* [License](#LICENSE)
+* [Contributing](#CONTRIBUTING)
+* [Questions](#QUESTIONS)
+
+
 ## DESCRIPTION
   What it is and why it was built:
 ${answers.description}
@@ -113,6 +124,7 @@ ${answers.username}
 
 Email Contact:
 ${answers.email}
+
 
 `
 
