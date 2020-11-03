@@ -1,6 +1,7 @@
 // array of questions for user
 const inquirer = require('inquirer');
 var fs = require("fs");
+const { rejects } = require('assert');
 
 inquirer
     .prompt([
@@ -43,6 +44,11 @@ inquirer
         },
         {
             type: "input",
+            message: "How do you use the repo?",
+            name: "using"
+        },
+        {
+            type: "input",
             message: "What command needs to be run to install dependencies?",
             name: "dependencies"
         },
@@ -62,18 +68,55 @@ inquirer
             name: "contributing"
         },
 
+    ]).then((answers) => {
 
-]);
+        let readme = `
+# ${answers.project}
 
+## Description and why it was build:
+${answers.description}
+${answers.purpose}
+
+## How to use the repo:
+${answers.using}
+
+## Technologies used on this product:
+${answers.technologies}
+
+
+## Command(s) to run to install dependencies:
+${answers.dependencies}
+
+## License:
+${answers.license}
+
+## Command(s) to run to test:
+${answers.tests}
+
+
+## Who contributed to this project:
+${answers.workers}
+
+
+## Others may contribute by?:
+${answers.contributing}
+
+## GitHub Username:
+${answers.username}
+
+## Email Contact:
+${answers.email}
+
+`
 
 // function to write README file
-function writeToFile(fileName, data) {
-}
+fs.writeFile('README.md', readme, err => {
+    if  (writeFileError) {
 
-// function to initialize program
-function init() {
+        rejects(writeFileError);
+        return;
+    }
 
-}
-
-// function call to initialize program
-init();
+   resolve('README.md');
+  })
+ })
