@@ -8,3 +8,6 @@ Here is what the page looks like when you are answering questions:
 ![ReadMeBefore](ReadMeBefore.png)
 Here is the ReadMe that it generates for you:
 [![Watch the video](ReadMeAfter.png)](https://www.youtube.com/watch?v=teq6agyTfgg&feature=youtu.be)
+If you click the picture above, you will be taken to this video of my demo.
+
+
